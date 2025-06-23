@@ -1,5 +1,3 @@
-
-
 from masks import get_mask_card_number
 
 
@@ -13,8 +11,10 @@ def mask_account_card(card_info: str) -> str:
             card_type_list.append(string)
     card_type = " ".join(card_type_list)
 
-    card_number = int(card_info_list[-1])
-    return f"{card_type} {get_mask_card_number(card_number)}"
+    card_num = str(card_info_list[-1])
+    return f"{card_type} {get_mask_card_number (card_num)}"
+
+
 
 from datetime import datetime
 
