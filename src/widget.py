@@ -19,6 +19,7 @@ def mask_account_card(card_info: str) -> str:
 from datetime import datetime
 
 
+
 def get_date(iso_date: str) -> str:
     """Преобразует дату в 'ДД.ММ.ГГГГ'"""
 
