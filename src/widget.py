@@ -4,6 +4,7 @@ from masks import get_mask_card_number
 def mask_account_card(card_info: str) -> str:
     """Функция принимает информацию о карте и маскирует ее номер"""
     card_type_list = []
+
     card_info_list = card_info.split()
 
     for string in card_info_list:
