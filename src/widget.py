@@ -16,9 +16,7 @@ def mask_account_card(card_info: str) -> str:
     return f"{card_type} {get_mask_card_number (card_num)}"
 
 
-
 from datetime import datetime
-
 
 
 def get_date(iso_date: str) -> str:
