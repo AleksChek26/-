@@ -10,7 +10,6 @@
 ```
 git clone https://github.com/AleksChek26/-.git
 ```
-
 ## Функционал:
 -Скрытие номера карты или счета
 
