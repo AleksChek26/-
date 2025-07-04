@@ -29,5 +29,4 @@ git clone https://github.com/AleksChek26/-.git
 
 ## Автор:
 
-
 Чекунов Александр Николаевич
