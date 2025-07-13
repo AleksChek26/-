@@ -14,3 +14,7 @@ def sort_by_date(list_of_dicts: List[Dict[str, Any]], reverse: bool = True) -> L
     Сортирует список словарей по дате (ключ 'date')
     """
     return sorted(list_of_dicts, key=lambda x: datetime.fromisoformat(x["date"]), reverse=reverse)
+
+def sort_by_date(info_list: List[Dict], reverse: bool = True) -> List[Dict]:
+    """Функция сортировки списка словарей по дате"""
+    return sorted(info_list, key=lambda x: x["date"], reverse=True)
