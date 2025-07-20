@@ -11,7 +11,7 @@ def test_filter_by_currency() -> None:
         {"operationAmount": {"currency": {"code": "USD"}}},
     ]
 
-    # Тест 1: Фильтрация по USD
+    # Тест 1: Фильтрация по валюте: USD
     result = list(filter_by_currency(transactions, "USD"))
     assert len(result) == 2, "Должно быть 2 USD транзакции"
 
