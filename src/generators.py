@@ -45,6 +45,6 @@ def card_number_generator(start: int, end: int) -> Iterator[str]:
         raise ValueError("Numbers must be between 1 and 9999999999999999")
 
     for number in range(start, end + 1):
-        # Форматируем число в 16-значную строку с ведущими нулями и пробелами
+        # Форматируем число в 16-значную строку с ведущими нулями и пробелами.
         card_number = f"{number:016d}"
         yield f"{card_number[:4]} {card_number[4:8]} {card_number[8:12]} {card_number[12:16]}"
