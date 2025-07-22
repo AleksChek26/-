@@ -2,6 +2,7 @@ import pytest
 
 from src.widget import get_date
 
+
 @pytest.mark.parametrize(
     "date, expected",
     [
@@ -13,4 +14,3 @@ from src.widget import get_date
 )
 def test_get_date_boundary_values(date, expected):
     assert get_date(date) == expected
-
