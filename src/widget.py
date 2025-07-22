@@ -101,6 +101,3 @@ def get_date(iso_date: str) -> str:
         return date_obj.strftime("%d.%m.%Y")
     except (ValueError, AttributeError):
         return "Ошибка: Некорректный формат даты. Ожидается 'ГГГГ-ММ-ДДTЧЧ:ММ:СС'."
-
-
-
