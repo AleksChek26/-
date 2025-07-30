@@ -1,8 +1,8 @@
-from functools import wraps
 import datetime
-import traceback
-from typing import Callable, TypeVar, Any, Optional
 import sys
+import traceback
+from functools import wraps
+from typing import Any, Callable, Optional, TypeVar
 
 T = TypeVar("T")  # Generic тип для возвращаемого значения функции
 

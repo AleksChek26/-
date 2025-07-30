@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Dict, Union, List
+from typing import Dict, List, Union
 
 # Константы
 ACCOUNT_VISIBLE_DIGITS: int = 4
