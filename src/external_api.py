@@ -31,14 +31,14 @@ def get_amount_in_rub(transaction: Dict[str, Union[str, float, int]]) -> float:
     if currency == "RUB":
         return amount
 
-    API_KEY = os.getenv("API_KEY")
-    if not API_KEY:
+    api_key = os.getenv("API_KEY")
+    if not api_key:
         raise ValueError("API ключ не найден в .env")
 
     url = f"https://api.apilayer.com/exchangerates_data/latest?base={currency}&symbols=RUB"
 
     try:
-        response = requests.get(url, headers={"apikey": API_KEY}, timeout=10)
+        response = requests.get(url, headers={"apikey": api_key}, timeout=10)
         response.raise_for_status()
 
         # Аннотация типа для response.json()
