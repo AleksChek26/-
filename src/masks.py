@@ -1,7 +1,7 @@
 import logging
+import os
 from pathlib import Path
 from typing import Union
-import os
 
 # Константы
 CARD_NUMBER_LENGTH: int = 16
