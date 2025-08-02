@@ -81,6 +81,7 @@ def test_account_masking(account_test_cases: Tuple[str, str]) -> None:
     assert result == expected, f"Для входа {input_data} ожидалось {expected}, получено {result}"
 
 
+
 # Дополнительные тесты с прямой параметризацией
 @pytest.mark.parametrize(
     "input_data,expected",

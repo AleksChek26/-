@@ -13,3 +13,4 @@ def test_usd_transaction() -> None:
 
         result = get_amount_in_rub(transaction)
         assert result == 7500.0
+
