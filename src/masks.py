@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 from typing import Union
 
+
 # Константы
 CARD_NUMBER_LENGTH: int = 16
 VISIBLE_DIGITS: int = 4
@@ -23,6 +24,7 @@ file_handler = logging.FileHandler(
     encoding="utf-8",  # Явно указываем кодировку UTF-8
 )
 file_handler.setLevel(logging.DEBUG)
+
 
 # Форматтер с указанием времени, имени модуля, уровня и сообщения
 file_formatter = logging.Formatter(
