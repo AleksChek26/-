@@ -9,6 +9,7 @@ def filter_transactions_by_description(transactions: List[Dict[str, Any]], searc
     Args:
          transactions: Список словарей с транзакциями
          search_query: Строка для поиска (регистрозависимая)
+         search_query: Строка для поиска (регистрозависимо)
 
     Returns:
         Отфильтрованный список транзакций

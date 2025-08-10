@@ -79,6 +79,7 @@ def generate_sample_card_numbers() -> None:
 
 
 def show_transaction_descriptions(transaction: List[Dict[str, Any]]) -> None:
+def show_transaction_descriptions(transactions: List[Dict[str, Any]]) -> None:
     """Демонстрация работы генератора описаний транзакций"""
     print("\nВсе описания транзакций:")
     for i, desc in enumerate(transaction_descriptions(transactions), 1):
@@ -86,6 +87,7 @@ def show_transaction_descriptions(transaction: List[Dict[str, Any]]) -> None:
 
 
 def show_category_stats(transaction: List[Dict[str, Any]]) -> None:
+def show_category_stats(transactions: List[Dict[str, Any]]) -> None:
     """Демонстрация статистики по категориям"""
     categories = list(set(t.get("category") for t in transactions if t.get("category")))
     valid_categories = [str(cat) for cat in categories if cat is not None]
@@ -172,12 +174,24 @@ def main(*args: str) -> None:
             transaction = read_financial_transactions(str(file_path))
 
         print(f"\nУспешно загружено транзакций: {len(transaction)}")
+        print(list((file_path.parent.parent / 'data').glob('*')))
+        return
+
+    transactions: List[Dict[str, Any]] = []
+    try:
+        if file_type == "1":
+            transactions = read_transactions_from_json(str(file_path))
+        else:
+            transactions = read_financial_transactions(str(file_path))
+
+        print(f"\nУспешно загружено транзакций: {len(transactions)}")
 
     except Exception as e:
         print(f"\nОшибка при чтении файла: {type(e).__name__}: {e}")
         return
 
     if not transaction:
+    if not transactions:
         print("Нет данных для обработки")
         return
 
