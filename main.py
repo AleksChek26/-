@@ -161,7 +161,7 @@ def main(*args: str) -> None:
         print(f"1. Файл должен находиться в: {file_path.parent}")
         print(f"2. Имя файла должно быть: {file_path.name}")
         print("Содержимое папки data:")
-        print(list((file_path.parent.parent / 'data').glob('*')))
+        print(list((file_path.parent.parent / "data").glob("*")))
         return
 
     transactions: List[Dict[str, Any]] = []
