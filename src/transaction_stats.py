@@ -14,6 +14,7 @@ def count_transactions_by_category(transactions: List[Dict[str, Any]], categorie
     Returns:
         Словарь {категория: количество_совпадений}
     """
+
     matched_categories: List[str] = []
 
     for tx in transactions:

@@ -78,6 +78,7 @@ def generate_sample_card_numbers() -> None:
         print(f"{i}. {num}")
 
 
+def show_transaction_descriptions(transaction: List[Dict[str, Any]]) -> None:
 def show_transaction_descriptions(transactions: List[Dict[str, Any]]) -> None:
     """Демонстрация работы генератора описаний транзакций"""
     print("\nВсе описания транзакций:")
@@ -85,6 +86,7 @@ def show_transaction_descriptions(transactions: List[Dict[str, Any]]) -> None:
         print(f"{i}. {desc}")
 
 
+def show_category_stats(transaction: List[Dict[str, Any]]) -> None:
 def show_category_stats(transactions: List[Dict[str, Any]]) -> None:
     """Демонстрация статистики по категориям"""
     categories = list(set(t.get("category") for t in transactions if t.get("category")))
@@ -161,6 +163,17 @@ def main(*args: str) -> None:
         print(f"1. Файл должен находиться в: {file_path.parent}")
         print(f"2. Имя файла должно быть: {file_path.name}")
         print("Содержимое папки data:")
+        print(list((file_path.parent.parent / "data").glob("*")))
+        return
+
+    transaction: List[Dict[str, Any]] = []
+    try:
+        if file_type == "1":
+            transaction = read_transactions_from_json(str(file_path))
+        else:
+            transaction = read_financial_transactions(str(file_path))
+
+        print(f"\nУспешно загружено транзакций: {len(transaction)}")
         print(list((file_path.parent.parent / 'data').glob('*')))
         return
 
@@ -177,6 +190,7 @@ def main(*args: str) -> None:
         print(f"\nОшибка при чтении файла: {type(e).__name__}: {e}")
         return
 
+    if not transaction:
     if not transactions:
         print("Нет данных для обработки")
         return

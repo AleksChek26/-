@@ -4,6 +4,7 @@ from src.transaction_stats import count_transactions_by_category
 
 class TestTransactionStats(unittest.TestCase):
     def setUp(self) -> None:
+        """Подготовка тестовых данных для функции"""
         """Подготовка тестовых данных"""
         self.sample_transactions = [
             {"amount": 100, "description": "Покупка в магазине ABC"},
@@ -91,4 +92,5 @@ class TestTransactionStats(unittest.TestCase):
 
 
 if __name__ == "__main__":
+    unittest.main()
     unittest.main()
