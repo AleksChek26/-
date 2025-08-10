@@ -10,7 +10,6 @@ def setup_utils_logger() -> logging.Logger:
     logs_dir = Path("logs")
     logs_dir.mkdir(exist_ok=True)
 
-
     # Создаем логер
     logger = logging.getLogger("utils")
     logger.setLevel(logging.DEBUG)  # Уровень не ниже DEBUG

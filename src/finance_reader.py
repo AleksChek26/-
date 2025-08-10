@@ -27,15 +27,15 @@ def read_financial_transactions(filename: str) -> List[Dict[str, Any]]:
         raise FileNotFoundError(f"Файл {filename} не найден в {file_path.parent}")
 
     try:
-        if file_path.suffix == '.csv':
+        if file_path.suffix == ".csv":
             data = pd.read_csv(file_path)
-        elif file_path.suffix in ('.xlsx', '.xls'):
-            data = pd.read_excel(file_path, engine='openpyxl')
+        elif file_path.suffix in (".xlsx", ".xls"):
+            data = pd.read_excel(file_path, engine="openpyxl")
         else:
             raise ValueError("Формат файла не поддерживается")
 
         # Явное приведение типов для mypy
-        return cast(List[Dict[str, Any]], data.to_dict('records'))
+        return cast(List[Dict[str, Any]], data.to_dict("records"))
 
     except pd.errors.EmptyDataError:
         raise ValueError("Файл не содержит данных")
