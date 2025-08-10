@@ -26,6 +26,7 @@ file_handler = logging.FileHandler(
 file_handler.setLevel(logging.DEBUG)
 
 
+# Форматер с указанием времени, имени модуля, уровня и сообщения
 # Форматтер с указанием времени, имени модуля, уровня и сообщения
 file_formatter = logging.Formatter(
     fmt="%(asctime)s - %(name)s - %(levelname)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
