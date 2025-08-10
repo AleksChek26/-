@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 from typing import Union
 
+
 # Константы
 CARD_NUMBER_LENGTH: int = 16
 VISIBLE_DIGITS: int = 4
@@ -24,7 +25,8 @@ file_handler = logging.FileHandler(
 )
 file_handler.setLevel(logging.DEBUG)
 
-# Форматтер с указанием времени, имени модуля, уровня и сообщения
+
+# Форматер с указанием времени, имени модуля, уровня и сообщения
 file_formatter = logging.Formatter(
     fmt="%(asctime)s - %(name)s - %(levelname)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
 )
